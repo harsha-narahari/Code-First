@@ -1,0 +1,10 @@
+C:\Harsha\Samples\Database\CodeFirstSample\CodeFirstSample\bin\Debug\CodeFirstSample.exe.config
+C:\Harsha\Samples\Database\CodeFirstSample\CodeFirstSample\bin\Debug\CodeFirstSample.exe
+C:\Harsha\Samples\Database\CodeFirstSample\CodeFirstSample\bin\Debug\CodeFirstSample.pdb
+C:\Harsha\Samples\Database\CodeFirstSample\CodeFirstSample\bin\Debug\EntityFramework.dll
+C:\Harsha\Samples\Database\CodeFirstSample\CodeFirstSample\bin\Debug\EntityFramework.SqlServer.dll
+C:\Harsha\Samples\Database\CodeFirstSample\CodeFirstSample\bin\Debug\EntityFramework.xml
+C:\Harsha\Samples\Database\CodeFirstSample\CodeFirstSample\bin\Debug\EntityFramework.SqlServer.xml
+C:\Harsha\Samples\Database\CodeFirstSample\CodeFirstSample\obj\Debug\CodeFirstSample.csprojResolveAssemblyReference.cache
+C:\Harsha\Samples\Database\CodeFirstSample\CodeFirstSample\obj\Debug\CodeFirstSample.exe
+C:\Harsha\Samples\Database\CodeFirstSample\CodeFirstSample\obj\Debug\CodeFirstSample.pdb
