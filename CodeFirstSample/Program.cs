@@ -9,7 +9,7 @@ namespace CodeFirstSample
         static void Main(string[] args)
         {
             BookUnitOfWork uow = new BookUnitOfWork(new BookModel());
-            //AddBooks(uow);
+            AddBooks(uow);
             GetBooks(uow);
         }
 

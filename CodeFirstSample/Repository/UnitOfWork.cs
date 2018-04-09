@@ -11,10 +11,12 @@ namespace CodeFirstSample.Repository
     {
         private readonly DbContext _context;
         protected List<string> _procedures;
+        protected List<CommandProcedure> _sqlCommandProcedures;
 
         public UnitOfWork(DbContext context)
         {
             _context = context;
+            _sqlCommandProcedures = new List<CommandProcedure>();
         }
 
         protected static Lazy<IRepository<TEntity>> GetLazyRepository<TEntity>(DbContext context) where TEntity : class
@@ -36,24 +38,31 @@ namespace CodeFirstSample.Repository
             return result;
         }
 
-        public int ExecuteCommandProcedure(string procedureName, object[] Params)
+        public void ExecuteCommandProcedure(string procedureName, object[] parameters)
         {
-            var affectedRows = 0;
             if (_procedures != null && _procedures.Count != 0)
             {
                 var query = _procedures.FirstOrDefault(q => q.Contains(procedureName));
                 if (!string.IsNullOrEmpty(query))
                 {
-                    affectedRows = _context.Database.ExecuteSqlCommand(query, Params);
+                    _sqlCommandProcedures.Add(new CommandProcedure() { StoredProdureCommand = query, Parameters = parameters });
                 }
             }
-            return affectedRows;
         }
 
         public void Save()
         {
             if (_context != null)
             {
+                if (_sqlCommandProcedures != null && _sqlCommandProcedures.Count != 0)
+                {
+                    foreach (var sqlCommandProcedure in _sqlCommandProcedures)
+                    {
+                        _context.Database.ExecuteSqlCommand(sqlCommandProcedure.StoredProdureCommand, sqlCommandProcedure.Parameters);
+                    }
+                    _sqlCommandProcedures = new List<CommandProcedure>();
+                }
+
                 _context.SaveChanges();
             }
         }

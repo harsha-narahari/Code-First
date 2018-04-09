@@ -57,6 +57,7 @@
     <Compile Include="DomainModel\Dbo\BookSummary.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CommandProcedure.cs" />
     <Compile Include="Repository\IUnitOfWork.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Repository\IRepository.cs" />
